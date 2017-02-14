@@ -1,0 +1,276 @@
+EESchema Schematic File Version 2
+LIBS:power
+LIBS:device
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:esp8266
+LIBS:pickit-cache
+LIBS:espboard-cache
+EELAYER 25 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L esp8266 U1
+U 1 1 58A30DCB
+P 4800 2050
+F 0 "U1" H 4850 2150 60  0000 C CNN
+F 1 "esp8266" H 4850 2250 60  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_2x04_Pitch2.54mm" H 4800 2050 60  0001 C CNN
+F 3 "" H 4800 2050 60  0001 C CNN
+	1    4800 2050
+	1    0    0    -1  
+$EndComp
+$Comp
+L LM1117-3.3 U2
+U 1 1 58A30E52
+P 3400 1600
+F 0 "U2" H 3500 1350 50  0000 C CNN
+F 1 "LM1117-3.3" H 3400 1850 50  0000 C CNN
+F 2 "TO_SOT_Packages_SMD:SOT-223" H 3400 1600 50  0001 C CNN
+F 3 "" H 3400 1600 50  0000 C CNN
+	1    3400 1600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4250 1600 3700 1600
+Wire Wire Line
+	4250 1150 4250 1600
+Wire Wire Line
+	4250 1400 5750 1400
+Wire Wire Line
+	5000 2450 5000 2700
+Wire Wire Line
+	5000 2700 3400 2700
+Wire Wire Line
+	3400 1900 3400 3100
+$Comp
+L SW_PUSH SW1
+U 1 1 58A310AE
+P 3900 3100
+F 0 "SW1" H 4050 3210 50  0000 C CNN
+F 1 "SW_PUSH" H 3900 3020 50  0000 C CNN
+F 2 "Buttons_Switches_THT:SW_PUSH_6mm" H 3900 3100 50  0001 C CNN
+F 3 "" H 3900 3100 50  0000 C CNN
+	1    3900 3100
+	1    0    0    -1  
+$EndComp
+$Comp
+L CP C2
+U 1 1 58A3113B
+P 3850 1750
+F 0 "C2" H 3875 1850 50  0000 L CNN
+F 1 "CP" H 3875 1650 50  0000 L CNN
+F 2 "Capacitors_THT:CP_Radial_D5.0mm_P2.50mm" H 3888 1600 50  0001 C CNN
+F 3 "" H 3850 1750 50  0000 C CNN
+	1    3850 1750
+	1    0    0    -1  
+$EndComp
+$Comp
+L CP C1
+U 1 1 58A311EE
+P 2850 1750
+F 0 "C1" H 2875 1850 50  0000 L CNN
+F 1 "CP" H 2875 1650 50  0000 L CNN
+F 2 "Capacitors_THT:CP_Radial_D5.0mm_P2.50mm" H 2888 1600 50  0001 C CNN
+F 3 "" H 2850 1750 50  0000 C CNN
+	1    2850 1750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2350 1600 3100 1600
+Wire Wire Line
+	2350 1900 3850 1900
+Connection ~ 3400 1900
+$Comp
+L R R1
+U 1 1 58A314A5
+P 4500 3100
+F 0 "R1" V 4580 3100 50  0000 C CNN
+F 1 "R" V 4500 3100 50  0000 C CNN
+F 2 "Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 4430 3100 50  0001 C CNN
+F 3 "" H 4500 3100 50  0000 C CNN
+	1    4500 3100
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3400 3100 3600 3100
+Connection ~ 3400 2700
+Wire Wire Line
+	4200 3100 4350 3100
+Wire Wire Line
+	4650 3100 5650 3100
+Wire Wire Line
+	5650 3100 5650 1150
+Wire Wire Line
+	4250 1150 5850 1150
+Connection ~ 4250 1400
+Wire Wire Line
+	4250 3100 4250 2750
+Wire Wire Line
+	4250 2750 5550 2750
+Wire Wire Line
+	5550 2750 5550 1200
+Wire Wire Line
+	5550 1200 4800 1200
+Wire Wire Line
+	4800 1200 4800 1400
+Connection ~ 4250 3100
+$Comp
+L SW_PUSH SW2
+U 1 1 58A3161E
+P 3900 3450
+F 0 "SW2" H 4050 3560 50  0000 C CNN
+F 1 "SW_PUSH" H 3900 3370 50  0000 C CNN
+F 2 "Buttons_Switches_THT:SW_PUSH_6mm" H 3900 3450 50  0001 C CNN
+F 3 "" H 3900 3450 50  0000 C CNN
+	1    3900 3450
+	1    0    0    -1  
+$EndComp
+Connection ~ 4700 3100
+Wire Wire Line
+	3600 3450 3450 3450
+Wire Wire Line
+	3450 3450 3450 3100
+Connection ~ 3450 3100
+Wire Wire Line
+	4350 3450 4350 2650
+Wire Wire Line
+	4350 2650 5800 2650
+Wire Wire Line
+	4800 2650 4800 2450
+$Comp
+L CONN_01X02 P1
+U 1 1 58A31761
+P 2150 1800
+F 0 "P1" H 2150 1950 50  0000 C CNN
+F 1 "CONN_01X02" V 2250 1800 50  0000 C CNN
+F 2 "" H 2150 1800 50  0001 C CNN
+F 3 "" H 2150 1800 50  0000 C CNN
+	1    2150 1800
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	2350 1850 2350 1900
+Connection ~ 2850 1900
+Wire Wire Line
+	2350 1750 2350 1600
+Connection ~ 2850 1600
+Wire Wire Line
+	4350 3450 4200 3450
+$Comp
+L R R2
+U 1 1 58A31CCB
+P 5850 1300
+F 0 "R2" V 5930 1300 50  0000 C CNN
+F 1 "R" V 5850 1300 50  0000 C CNN
+F 2 "Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 5780 1300 50  0001 C CNN
+F 3 "" H 5850 1300 50  0000 C CNN
+	1    5850 1300
+	1    0    0    -1  
+$EndComp
+Connection ~ 5650 1150
+Wire Wire Line
+	4900 1400 4900 1300
+Wire Wire Line
+	4900 1300 5750 1300
+Wire Wire Line
+	5750 1300 5750 1450
+Wire Wire Line
+	5750 1450 6100 1450
+$Comp
+L CONN_01X08 P2
+U 1 1 58A31E00
+P 6300 2100
+F 0 "P2" H 6300 2550 50  0000 C CNN
+F 1 "CONN_01X08" V 6400 2100 50  0000 C CNN
+F 2 "" H 6300 2100 50  0001 C CNN
+F 3 "" H 6300 2100 50  0000 C CNN
+	1    6300 2100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5000 2500 6100 2500
+Wire Wire Line
+	6100 2500 6100 2450
+Connection ~ 5000 2500
+Wire Wire Line
+	5000 1400 5000 1350
+Wire Wire Line
+	5000 1350 5700 1350
+Wire Wire Line
+	5700 1350 5700 2350
+Wire Wire Line
+	5700 2350 6100 2350
+Wire Wire Line
+	4700 2450 4700 2550
+Wire Wire Line
+	4700 2550 5450 2550
+Wire Wire Line
+	5450 2550 5450 2250
+Wire Wire Line
+	5450 2250 6100 2250
+Wire Wire Line
+	5750 1400 5750 2150
+Wire Wire Line
+	5750 2150 6100 2150
+Connection ~ 4700 1400
+Wire Wire Line
+	5800 2650 5800 2050
+Wire Wire Line
+	5800 2050 6100 2050
+Connection ~ 4800 2650
+Wire Wire Line
+	5050 1350 5050 1500
+Wire Wire Line
+	5050 1500 5800 1500
+Wire Wire Line
+	5800 1500 5800 1950
+Wire Wire Line
+	5800 1950 6100 1950
+Connection ~ 5050 1350
+Wire Wire Line
+	4900 2450 5300 2450
+Wire Wire Line
+	5300 2450 5300 1850
+Wire Wire Line
+	5300 1850 6100 1850
+Wire Wire Line
+	6100 1450 6100 1750
+Connection ~ 5850 1450
+$EndSCHEMATC
