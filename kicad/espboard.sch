@@ -1,4 +1,5 @@
 EESchema Schematic File Version 2
+LIBS:espboard-rescue
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -30,6 +31,9 @@ LIBS:contrib
 LIBS:valves
 LIBS:ESP8266
 LIBS:switches
+LIBS:wemos_mini
+LIBS:usb_connector
+LIBS:ftdi
 LIBS:espboard-cache
 EELAYER 25 0
 EELAYER END
@@ -56,29 +60,12 @@ F 3 "" H 4350 2400 50  0001 C CNN
 	1    4350 2400
 	1    0    0    -1  
 $EndComp
-$Comp
-L CONN_01X05 P2
-U 1 1 58A467E8
-P 2750 4400
-F 0 "P2" H 2750 4700 50  0000 C CNN
-F 1 "CONN_UART" V 2850 4400 50  0000 C CNN
-F 2 "Socket_Strips:Socket_Strip_Straight_1x05_Pitch2.54mm" H 2750 4400 50  0001 C CNN
-F 3 "" H 2750 4400 50  0000 C CNN
-	1    2750 4400
-	1    0    0    -1  
-$EndComp
-Text GLabel 2400 4300 0    60   Input ~ 0
+Text GLabel 2350 4500 0    60   Input ~ 0
 UART_TXD
-Text GLabel 2400 4400 0    60   Input ~ 0
+Text GLabel 2350 4400 0    60   Input ~ 0
 UART_RXD
-Text GLabel 2400 4500 0    60   Input ~ 0
+Text GLabel 2400 4800 0    60   Input ~ 0
 UART_GND
-Wire Wire Line
-	2400 4300 2550 4300
-Wire Wire Line
-	2400 4400 2550 4400
-Wire Wire Line
-	2400 4500 2550 4500
 Text GLabel 2850 2250 0    60   Input ~ 0
 UART_RXD
 Text GLabel 6000 2550 2    60   Input ~ 0
@@ -92,10 +79,10 @@ UART_GND
 Wire Wire Line
 	6000 2250 5300 2250
 $Comp
-L CONN_01X02 P1
+L CONN_01X02 P2
 U 1 1 58A469C7
 P 2750 3650
-F 0 "P1" H 2750 3800 50  0000 C CNN
+F 0 "P2" H 2750 3800 50  0000 C CNN
 F 1 "CONN_PWR" V 2850 3650 50  0000 C CNN
 F 2 "Socket_Strips:Socket_Strip_Straight_2x01_Pitch2.54mm" H 2750 3650 50  0001 C CNN
 F 3 "" H 2750 3650 50  0000 C CNN
@@ -207,10 +194,6 @@ F 3 "" H 3150 2750 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	3350 2850 3350 2450
-Wire Wire Line
-	3350 2450 3400 2450
-Wire Wire Line
 	3300 2750 3350 2750
 Connection ~ 3350 2750
 Wire Wire Line
@@ -274,9 +257,9 @@ Text GLabel 6000 2350 2    60   Input ~ 0
 ESP_GPIO2
 Text GLabel 6000 2450 2    60   Input ~ 0
 ESP_GPIO0
-Text GLabel 6750 3100 0    60   Input ~ 0
-PWR_5V
 Text GLabel 6750 3000 0    60   Input ~ 0
+PWR_5V
+Text GLabel 6750 3100 0    60   Input ~ 0
 PWR_3V3
 Text GLabel 6750 3200 0    60   Input ~ 0
 GND
@@ -334,35 +317,99 @@ F 3 "" H 4200 3850 50  0000 C CNN
 	1    4200 3850
 	1    0    0    -1  
 $EndComp
-NoConn ~ 2550 4200
-NoConn ~ 2550 4600
-$Comp
-L USB_OTG P4
-U 1 1 58A48A4A
-P 6650 4700
-F 0 "P4" H 6975 4575 50  0000 C CNN
-F 1 "USB_OTG" H 6650 4900 50  0000 C CNN
-F 2 "Connectors:USB_Micro-B" V 6600 4600 50  0001 C CNN
-F 3 "" V 6600 4600 50  0000 C CNN
-	1    6650 4700
-	1    0    0    -1  
-$EndComp
-NoConn ~ 6550 5000
-NoConn ~ 6650 5000
-NoConn ~ 6750 5000
-NoConn ~ 7050 4600
-Text GLabel 6850 5150 3    60   Input ~ 0
+Text GLabel 6900 4950 2    60   Input ~ 0
 PWR_GND
-Text GLabel 6450 5150 3    60   Input ~ 0
+Text GLabel 7100 4300 2    60   Input ~ 0
 PWR_5V
-Wire Wire Line
-	6850 5150 6850 5000
-Wire Wire Line
-	6450 5150 6450 5000
 Wire Wire Line
 	6750 3400 7100 3400
 Wire Wire Line
 	7100 3500 6750 3500
+$Comp
+L USB_OTG J1
+U 1 1 593C27C3
+P 6700 4500
+F 0 "J1" H 6500 4950 50  0000 L CNN
+F 1 "USB_OTG" H 6500 4850 50  0000 L CNN
+F 2 "Connectors:USB_Micro-B" H 6850 4450 50  0001 C CNN
+F 3 "" H 6850 4450 50  0001 C CNN
+	1    6700 4500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7000 4300 7100 4300
+NoConn ~ 7000 4500
+NoConn ~ 7000 4600
+NoConn ~ 7000 4700
+Wire Wire Line
+	3350 2850 3350 2450
+Text GLabel 8550 4300 2    60   Input ~ 0
+PWR_GND
+Text GLabel 8550 4800 2    60   Input ~ 0
+PWR_GND
+Text GLabel 8550 4700 2    60   Input ~ 0
+PWR_5V
+$Comp
+L usb_connector P4
+U 1 1 593C394D
+P 8350 4550
+F 0 "P4" H 8350 4100 60  0000 C CNN
+F 1 "usb_connector" H 8350 4000 60  0000 C CNN
+F 2 "usb_connector:usb_adapter" H 8350 4600 60  0001 C CNN
+F 3 "" H 8350 4600 60  0001 C CNN
+	1    8350 4550
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	8350 4300 8550 4300
+Wire Wire Line
+	8350 4700 8550 4700
+Wire Wire Line
+	8350 4800 8550 4800
+NoConn ~ 8350 4400
+NoConn ~ 8350 4500
+NoConn ~ 8350 4600
+$Comp
+L ftdi P1
+U 1 1 593C3EA8
+P 2650 4650
+F 0 "P1" H 2650 4150 60  0000 C CNN
+F 1 "ftdi" H 2850 4150 60  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x06_Pitch2.54mm" H 2650 4400 60  0001 C CNN
+F 3 "" H 2650 4400 60  0001 C CNN
+	1    2650 4650
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	2350 4400 2650 4400
+Wire Wire Line
+	2350 4500 2650 4500
+Wire Wire Line
+	2400 4800 2650 4800
+NoConn ~ 2650 4700
+NoConn ~ 2650 4600
+NoConn ~ 2650 4300
+Wire Wire Line
+	6600 4900 6600 5050
+Wire Wire Line
+	6600 4950 6900 4950
+Wire Wire Line
+	6700 4900 6700 4950
+Connection ~ 6700 4950
+Wire Wire Line
+	3350 2450 3400 2450
+$Comp
+L GND #PWR06
+U 1 1 593C4D77
+P 6600 5050
+F 0 "#PWR06" H 6600 4800 50  0001 C CNN
+F 1 "GND" H 6600 4900 50  0000 C CNN
+F 2 "" H 6600 5050 50  0001 C CNN
+F 3 "" H 6600 5050 50  0001 C CNN
+	1    6600 5050
+	1    0    0    -1  
+$EndComp
+Connection ~ 6600 4950
 Wire Wire Line
 	6750 3000 7100 3000
 Wire Wire Line
