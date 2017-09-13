@@ -6,6 +6,7 @@ rm -rf fusionpcb
 mkdir fusionpcb
 
 mv espboard.drl fusionpcb/espboard.TXT # Drill
+mv espboard-Edge.Cuts.gbr fusionpcb/espboard.GML # Edge.Cuts
 
 mv espboard-B.Cu.gbr fusionpcb/espboard.GBL # Bottom layer
 mv espboard-F.Cu.gbr fusionpcb/espboard.GTL # Top layer
