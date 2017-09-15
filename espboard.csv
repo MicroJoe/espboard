@@ -1,0 +1,14 @@
+"Id";"Designator";"Package";"Quantity";"Designation";"Supplier and ref";
+1;"U1";"ESP-01";1;"ESP-01v090";;;
+2;"U2";"SOT-223";1;"LM1117-3.3";;;
+3;"C1,C2";"CP_Radial_D5.0mm_P2.50mm";2;"10u";;;
+4;"J1";"USB_Micro-B";1;"USB_OTG";;;
+5;"P1";"Pin_Header_Straight_1x06_Pitch2.54mm";1;"ftdi";;;
+6;"P2";"Socket_Strip_Straight_2x01_Pitch2.54mm";1;"CONN_PWR";;;
+7;"P3";"Socket_Strip_Straight_1x08_Pitch2.54mm";1;"CONN_IO";;;
+8;"P4";"usb_adapter";1;"usb_connector";;;
+9;"R1";"R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal";1;"10k";;;
+10;"RST";"SW_PUSH_6mm";1;"SW_RST";;;
+11;"FLASH";"SW_PUSH_6mm";1;"SW_FLASH";;;
+12;"REF***";"OSHW-Logo2_14.6x12mm_SilkScreen";1;"OSHW-Logo2_14.6x12mm_SilkScreen";;;
+13;"REF**,REF**,REF**,REF**";"1pin";4;"1pin";;;
